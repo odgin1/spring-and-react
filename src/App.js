@@ -1,8 +1,22 @@
 import React, { useState, useEffect, Fragment} from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
-function App () {
+function App() {
+  return (
+    <div className="App">
+      <Router>
+        <Switch>
+          <Route path="/" component={Comp} />
+          <Route path="/xxx" component={Comp} />
+        </Switch>
+      </Router>
+    </div>
+  );
+}
+
+function Comp () {
     const [message, setMessage] = useState("");
     const [usdRate, setUsdRate] = useState("");
     const [eurRate, setEurRate] = useState("");
